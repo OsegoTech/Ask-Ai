@@ -1,6 +1,10 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { useTokenizeStore } from './tokenize'
+const environment = process.env.NODE_ENV
+console.log(environment)
+const url = environment === 'production' ? 'https://api.deepgram.com' : 'http://localhost:3000'
+console.log(url);
 
 export const useTextChatStore = defineStore('textChat', () => {
   const tokenizeStore = useTokenizeStore()
@@ -32,7 +36,7 @@ export const useTextChatStore = defineStore('textChat', () => {
     } else {
       isLoadingGPT.value = true
 
-      fetch('http://localhost:3000/chat', {
+      fetch(`${url}/chat`, {
         method: 'POST',
         body: JSON.stringify({
           messages: prompt.value

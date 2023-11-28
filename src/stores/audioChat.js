@@ -1,6 +1,10 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { useTokenizeStore } from './tokenize'
+const environment = process.env.NODE_ENV
+console.log(environment)
+const url = environment === 'production' ? 'https://api.deepgram.com' : 'http://localhost:3000'
+console.log(url);
 
 export const useAudioChatStore = defineStore('audioChat', () => {
   const tokenizeStore = useTokenizeStore()
@@ -21,7 +25,7 @@ export const useAudioChatStore = defineStore('audioChat', () => {
       const formData = new FormData()
       formData.append('file', file.value.value)
       isTranscribing.value = true
-      fetch('http://localhost:3000/dg-transcription', {
+      fetch(`${url}/dg-transcription`, {
         method: 'POST',
         body: formData
       })
@@ -64,7 +68,7 @@ export const useAudioChatStore = defineStore('audioChat', () => {
   function sendPrompt() {
     isLoadingGPT.value = true
 
-    fetch('http://localhost:3000/chat', {
+    fetch(`${url}/chat`, {
       method: 'POST',
       body: JSON.stringify({
         messages: prompt.value

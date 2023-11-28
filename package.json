@@ -8,9 +8,8 @@
     "preview": "vite preview",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore",
     "format": "prettier --write src/",
-    "init-server": "node api/server.js",
-    "start": "npm-run-all --parallel dev init-server",
-    "vercel-build": "npm run build && node api/server.js"
+    "init-server": "node server.js",
+    "start": "npm-run-all --parallel dev init-server"
   },
   "dependencies": {
     "@deepgram/sdk": "^2.1.1",

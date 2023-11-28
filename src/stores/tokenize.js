@@ -1,12 +1,16 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
+const environment = process.env.NODE_ENV
+console.log(environment)
+const url = environment === 'production' ? 'https://api.deepgram.com' : 'http://localhost:3000'
+console.log(url);
 
 export const useTokenizeStore = defineStore('tokenize', () => {
   const tokenLength = ref(0)
 
   function checkTokens(val) {
     tokenLength.value = 0
-    fetch('http://localhost:3000/tokenize', {
+    fetch(`${url}/tokenize`, {
       method: 'POST',
       body: JSON.stringify({
         stringToTokenize: val

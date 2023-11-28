@@ -1,6 +1,10 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { useTokenizeStore } from './tokenize'
+const environment = process.env.NODE_ENV
+console.log(environment)
+const url = environment === 'production' ? 'https://api.deepgram.com' : 'http://localhost:3000'
+console.log(url);
 
 export const useImageChatStore = defineStore('imageChat', () => {
   const tokenizeStore = useTokenizeStore()
@@ -14,7 +18,7 @@ export const useImageChatStore = defineStore('imageChat', () => {
   function createPrompt() {
     isThinking.value = true
     tokenizeStore.checkTokens(imageURL.value + question.value)
-    fetch('http://localhost:3000/minigpt', {
+    fetch(`${url}/minigpt`, {
       method: 'POST',
       body: JSON.stringify({
         image: imageURL.value,

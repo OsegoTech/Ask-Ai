@@ -2,7 +2,7 @@ import { ref } from 'vue'
 import { defineStore } from 'pinia'
 const environment = process.env.NODE_ENV
 console.log(environment)
-const url = environment === 'production' ? 'https://api.deepgram.com' : 'http://localhost:3000'
+const url = environment === 'production' ? 'https://ask-3-ai.azurewebsites.net' : 'http://localhost:3000'
 console.log(url);
 
 export const useTokenizeStore = defineStore('tokenize', () => {

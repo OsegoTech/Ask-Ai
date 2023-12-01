@@ -11,7 +11,7 @@ function sendQuestion() {
 </script>
 
 <template>
-  <article class="grid grid-cols-1 lg:grid-cols-2 gap-x-8">
+  <article class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 px-5">
     <div class="mt-4">
       <h3>Enter the text you would like to ask questions about.</h3>
       <section>
@@ -70,7 +70,7 @@ function sendQuestion() {
       </div>
     </div>
   </article>
-  <div class="flex justify-end">
+  <div class="flex justify-end px-4 py-3">
     <!-- Clear button to reset all the data -->
     <button @click="textChatStore.clearChat()" class="button button-secondary">Clear</button>
   </div>

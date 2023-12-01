@@ -7,7 +7,7 @@ const audioChatStore = useAudioChatStore()
 </script>
 
 <template>
-  <article class="grid grid-cols-1 lg:grid-cols-2 gap-x-8">
+  <article class="grid grid-cols-1 lg:grid-cols-2 gap-x-8 px-5">
     <div class="mt-4">
       <h3>Choose audio that has some speech that you would like to ask questions about.</h3>
       <section class="my-4">
@@ -19,7 +19,7 @@ const audioChatStore = useAudioChatStore()
     <div class="min-h-80 flex flex-col justify-between">
       <chat-window-audio page="audio" />
 
-      <div class="flex justify-end">
+      <div class="flex justify-end mr-2 mb-4">
         <button @click="audioChatStore.clearChat()" class="button button-secondary">Clear</button>
       </div>
     </div>

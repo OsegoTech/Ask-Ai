@@ -1,11 +1,12 @@
 <script setup>
-import { RouterLink, RouterView } from 'vue-router'
+import { RouterLink, RouterView } from "vue-router";
 </script>
 
 <template>
   <nav>
     <router-link to="/" class="flex">
-      <h1 class="mr-2">Ask AI</h1>
+      <!-- <h1 class="mr-2 ">Ask AI</h1> -->
+      <h3>Ask AI❓</h3>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         fill="none"
@@ -30,4 +31,36 @@ import { RouterLink, RouterView } from 'vue-router'
   <main>
     <RouterView />
   </main>
+  <!-- <footer class=" p-4 fixed bottom-0 w-full">
+    <p class="text-center text-gray-400 text-sm">
+      Made with
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        fill="currentColor"
+        viewBox="0 0 24 24"
+        class="inline-block w-4 h-4 text-red-500 align-text-bottom"
+      >
+        <path
+          fill-rule="evenodd"
+          d="M12 21.35l-1.103-1.003C5.103 15.35 2 12.103 2 8.5 2 5.462 4.462 3 7.5 3c1.5 0 2.903.66 3.853 1.803C12.697 3.66 14.1 3 15.6 3 18.638 3 21 5.462 21 8.5c0 3.603-3.103 6.85-8.897 12.847L12 21.35z"
+          clip-rule="evenodd"
+        />
+      </svg>
+      by
+      <a
+        href="https://twitter.com/osego_baba"
+        target="_blank"
+        class="text-green-500 hover:text-green-400"
+        >Osego Baba</a
+      >
+      and
+      <a
+        href="https://www.linkedin.com/in/omollo-cliff/"
+        target="_blank"
+        rel="noopener noreferrer"
+        class="text-green-500 hover:text-green-400"
+        >Omollo Oganda</a
+      >
+    </p>
+  </footer> -->
 </template>

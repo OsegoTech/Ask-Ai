@@ -6,7 +6,7 @@ const audioChatStore = useAudioChatStore()
 
 <template>
   <div>
-    <h3 class="mb-4">Transcribe the speech to text:</h3>
+    <h3 class="mb-2 md:mb-4">Transcribe the speech to text:</h3>
     <button @click="audioChatStore.transcribeFile()" class="button button-primary">
       Transcribe
     </button>

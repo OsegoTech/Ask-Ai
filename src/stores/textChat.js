@@ -1,7 +1,7 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
 import { useTokenizeStore } from './tokenize'
-const url = 'https://ask-ai-server.onrender.com'
+const url = 'https://ask-ai-api.azurewebsites.net'
 console.log(url);
 
 export const useTextChatStore = defineStore('textChat', () => {

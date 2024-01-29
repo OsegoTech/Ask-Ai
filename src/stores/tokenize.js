@@ -1,6 +1,6 @@
 import { ref } from 'vue'
 import { defineStore } from 'pinia'
-const url  = 'https://ask-ai-server.onrender.com'
+const url  = 'https://ask-ai-api.azurewebsites.net/'
 
 export const useTokenizeStore = defineStore('tokenize', () => {
   const tokenLength = ref(0)
